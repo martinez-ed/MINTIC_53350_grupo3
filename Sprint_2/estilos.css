@@ -1,122 +1,89 @@
-header{
-  display: block;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.cabezote{
-  padding: 10px 0;
-  background: rgb(1, 245, 62);
-  color: indigo;
-  height: 100px;
-  width: 100%;
+header {
+    display: block;
+    padding: 16px 32px;
+    background-color: #f4511e;
+    color: black;
+    height: 100%;
+    width: 100%;
+}
+header h1 {
+    color: #ffffff;
 }
 
+/* Boton Registrarse*/
 #btn-registrar {
-  position: relative;
-  background-color: #4CAF50;
-  border: none;
-  font-size: 20px;
-  /* color: #FFFFFF; */
-  padding: 0px;
-  /* width: 200px; */
-  /* text-align: center; */
-  /* transition-duration: 0.4s; */
-  /* text-decoration: none; */
-  overflow: hidden;
-  cursor: pointer;
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 32px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
 }
-/*
-#btn-registrar:after {
-  content: "";
-  background: #f1f1f1;
-  display: block;
-  position: absolute;
-  padding-top: 300%;
-  padding-left: 350%;
-  margin-left: -20px !important;
-  margin-top: -120%;
-  opacity: 0;
-  transition: all 0.8s
+#btn-registrar:hover {opacity: 1}
+/* Enlace Registrarse */
+#enlace-registro:link {
+    color: white;
+    text-decoration: none;
 }
 
-#btn-registrar:active:after {
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transition: 0s
-}
-*/
-/* #enlace-registro{
-  text-decoration: none;
-  color: #FFFFFF;
-} */
-#enlace-registro:link, #enlace-registro:visited {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-#enlace-registro:hover, #enlace-registro:active {
-  background-color: green;
-}
-
-/* Formato al registro*/
-.cabezote2 {
-padding: 2% 0;
-background: rgb(1, 245, 72);
-color: rgb(249, 248, 250);
-height: 10%;
-width: 100%;
-border-radius: 9px;
-}
+/* Formulario de registro */
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.form-registro {
-  width: 400px;
-  background: #ffffff;
-  padding:  30px;
-  margin: auto;
-  margin-top: 100px;
-  border-radius: 10px;
-  font-family: 'calibri';
-  color: rgb(8, 8, 8);
-  box-shadow: 7px 13px 37px #000;
+#form-registro {
+    width: 400px;
+    background-color: #f4511e;
+    padding: 30px;
+    margin: auto;
+    margin-top: 70px;
+    box-shadow: 7px 13px 37px #000;
 }
-.form-registro h2{  
-  font-size: 22px;
-  margin-bottom: 20px;
-  text-align: center;
+#form-registro h3 {
+    text-align: center;
+    color: white;
 }
-.controls{
-  width: 100%;
-  background: #c0c0c0;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  border: 1px solid #1b3392;
-  font-family: 'calibri';
-  font-size: 18px;
-  color: rgb(6, 1, 49);
+label {
+    display: block;
+    float: left;
+    color: black;
+}
+/* Estilo de los imputs */
+.txtCampos {
+    width: 100%;
+    background-color: #f4511e;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    font-size: 18px;
+    color: white;
+}
+
+/* Boton de submit */  
+#btn-submit-form {  
+    width: 100%;
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 16px 0;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
 }  
-.form-registro .boton{  
-  width: 50%;
-  background: #4CAF50;
-  border: none;
-  border-radius: 10px;
-  padding: 12px;
-  color: white;
-  margin: 16px 0 ;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all .5s ease;
-  text-align: center;
-}  
-.form-registro .boton:hover{
-  background: turquoise;
-  text-align: center;
-}
+#btn-submit-form:hover {opacity: 1;}
