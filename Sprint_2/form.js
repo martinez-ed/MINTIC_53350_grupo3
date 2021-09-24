@@ -64,9 +64,3 @@ function checkContrasena(contrasena) {
 }
 
 module.exports = { checkNombre, checkApellido, checkTelefono, checkCorreo, checkContrasena }
-
-// module.exports = checkNombre();
-// module.exports = checkApellido();
-// module.exports = checkTelefono();
-// module.exports = checkCorreo();
-// module.exports = checkContrasena();
