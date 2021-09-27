@@ -1,0 +1,89 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    display: block;
+    padding: 16px 32px;
+    background-color: #f4511e;
+    color: black;
+    height: 100%;
+    width: 100%;
+}
+header h1 {
+    color: #ffffff;
+}
+
+/* Boton Registrarse*/
+#btn-registrar {
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 32px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+#btn-registrar:hover {opacity: 1}
+/* Enlace Registrarse */
+#enlace-registro:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* Formulario de registro */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#form-registro {
+    width: 400px;
+    background-color: #f4511e;
+    padding: 30px;
+    margin: auto;
+    margin-top: 70px;
+    box-shadow: 7px 13px 37px #000;
+}
+#form-registro h3 {
+    text-align: center;
+    color: white;
+}
+label {
+    display: block;
+    float: left;
+    color: black;
+}
+/* Estilo de los imputs */
+.txtCampos {
+    width: 100%;
+    background-color: #f4511e;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    font-size: 18px;
+    color: white;
+}
+
+/* Boton de submit */  
+#btn-submit-form {  
+    width: 100%;
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 16px 0;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}  
+#btn-submit-form:hover {opacity: 1;}

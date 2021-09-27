@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>La PropTech</title>
+</head>
+<body>
+    <form action="" id="form-registro">
+        <h3>Formulario de Registro</h3><br>
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" class="txtCampos" onkeyup="checkNombre(document.getElementById('nombre'));">
+        </div>
+        <div>
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" class="txtCampos" onkeyup="checkApellido(document.getElementById('apellido'));">
+        </div>
+        <div>
+            <label for="telefono">Teléfono</label>
+            <input type="text" id="telefono" class="txtCampos" onkeyup="checkTelefono(document.getElementById('telefono'));">
+        </div>
+        <div>
+            <label for="correo">Correo</label>
+            <input type="text" id="correo" class="txtCampos" onkeyup="checkCorreo(document.getElementById('correo'));">
+        </div>
+        <div>
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" class="txtCampos" onkeyup="checkContrasena(document.getElementById('contrasena'));">
+        </div>
+        <div>
+            <input type="submit" id="btn-submit-form" value="Registrar">
+        </div>
+    </form>
+    <script src="form.js"></script>
+</body>
+</html>
