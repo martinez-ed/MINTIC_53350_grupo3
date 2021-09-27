@@ -38,6 +38,8 @@ function checkTelefono(telefono) {
 }
 
 // Validar "CORREO"
+// según la especificación HTML5
+// const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 var txtCorreo = /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 function checkCorreo(correo) {
     var EMAIL = txtCorreo.exec(correo.value);
