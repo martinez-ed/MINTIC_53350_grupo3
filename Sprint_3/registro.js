@@ -29,10 +29,10 @@ function contenedor() {
 }
 
 //Para Ordenar: "registro" o funtion.sort("apellido")
-    
-    function ordenarArreglo(){
-    contenedor.short([b]);
+function ordenarArreglo(){
+    arrayCampos.sort((a, b)=> a.apellido - b.apellido);
     }
+    console.log(ordenarArreglo);
 
 // Exportar las funciones
 module.exports = { agregarRegistro, ordenarArreglo, filtrarCorreo }
