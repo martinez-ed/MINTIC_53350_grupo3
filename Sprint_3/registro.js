@@ -1,7 +1,21 @@
+// Array con información consignada en formulario
+let registros = [];
+
+// Función para ordenar el registro por "apellido"
+function ordenarArreglo(arreglo) {
+    registros.sort(arreglo.b);
+    return console.log(registros);
+}
+
+// Función para filtrar el correo por "gmail"
+function filtrarCorreo(arreglo) {
+
+}
+
 // Función para capturar la información del formulario
 function agregarRegistro() {
     // Constructor
-    function capturas(nombre,apellido,telefono,correo,contrasena) {
+    function datos(nombre,apellido,telefono,correo,contrasena) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -15,24 +29,21 @@ function agregarRegistro() {
     var d = document.getElementById("correo").value;
     var e = document.getElementById("contrasena").value;
     // Crear el nuevo objeto
-    captura = new capturas(a,b,c,d,e);
-    console.log(captura);
+    arreglo = new datos(a,b,c,d,e);
+    // console.log(arreglo);
     contenedor();
+    // ordenarArreglo(registros);
 }
 
-// Array con información consignada en formulario
-var arrayCampos = [];
 // Función que contendrá el arreglo
 function contenedor() {
-    arrayCampos.push(captura);
-    console.log(arrayCampos);
+    registros.push(arreglo);
+    ordenarArreglo(registros);
+    // console.log(registros);
 }
 
-//Para Ordenar: "registro" o funtion.sort("apellido")
-function ordenarArreglo(){
-    arrayCampos.sort((a, b)=> a.apellido - b.apellido);
-    }
-    console.log(ordenarArreglo);
-
 // Exportar las funciones
-module.exports = { agregarRegistro, ordenarArreglo, filtrarCorreo }
+module.exports.registros = registros;
+module.exports.filtrarCorreo = filtrarCorreo;
+module.exports.ordenarArreglo = ordenarArreglo;
+module.exports.agregarRegistro = agregarRegistro;
