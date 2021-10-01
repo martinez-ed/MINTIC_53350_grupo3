@@ -12,30 +12,13 @@ function ordenarArreglo(arreglo) {
     });
     console.log(arreglo);
 }
-/*function ordenarArreglo(){
-    registros.sort((a, b) => {
-        if (a.apellido > b.apellido){
-            return 1;
-        }
-        if (a.apellido.toLowerCase() < b.apellido.toLowerCase()){
-            return -1;
-        }
-        if (a.nombre.toLowerCase() > b.nombre.toLowerCase()){
-            return 1;
-        }
-        if (a.nombre.toLowerCase() < b.nombre.toLowerCase()){
-            return -1;
-        }
-        return 0;
-    
-    });
-    //console.log(registros); 
-}  */
 
 // Función para filtrar el correo por "gmail"
-function filtrarCorreo(arreglo) {
-
-}
+function filtrarCorreo(){
+    const correos =registros.filter(mail => mail.correo === '@gmail.com') 
+        return correos === 'gmail';
+    };
+    console.log(correos);
 
 // Función para capturar la información del formulario
 function agregarRegistro() {
