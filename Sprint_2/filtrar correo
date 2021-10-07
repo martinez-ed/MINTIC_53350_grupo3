@@ -1,0 +1,9 @@
+unction filtrarCorreo(arreglo) {
+    var correosgmail = arreglo.filter(function(correog) {
+
+        if (correog.d == "@gmail.com") {
+            return true;
+        } else return false;
+    });
+
+    console.log(correosgmail);
