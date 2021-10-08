@@ -1,1 +1,1 @@
-SELECT nombre,apellido,correo FROM `Usuarios` order by nombre asc
+SELECT nombre,apellido,correo FROM `Usuarios` ORDER BY nombre ASC
