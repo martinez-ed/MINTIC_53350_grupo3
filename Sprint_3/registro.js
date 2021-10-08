@@ -1,56 +1,50 @@
-// Array con información consignada en formulario
 let registros = [];
 
-// Función para ordenar el registro por "apellido"
-function ordenarArreglo(arreglo) {
-    arreglo.sort(function(a, b) {
-        let x = a.apellido.toLowerCase();
-        let y = b.apellido.toLowerCase();
-        if (x < y) {return -1;}
-        if (x > y) {return 1;}
-        return 0;
-    });
-    console.log(arreglo);
-}
-
-// Función para filtrar el correo por "gmail"
-function filtrarCorreo(){
-    const correos =registros.filter(mail => mail.correo === '@gmail.com') 
-        return correos === 'gmail';
-    };
-    console.log(correos);
-
-// Función para capturar la información del formulario
-function agregarRegistro() {
-    // Constructor
-    function datos(nombre,apellido,telefono,correo,contrasena) {
+function agregarRegistro(){
+    function objeto(nombre, apellido, telefono, correo, contrasena){
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.correo = correo;
         this.contrasena = contrasena;
     }
-    // Capturar valores
-    var a = document.getElementById("nombre").value;
-    var b = document.getElementById("apellido").value;
-    var c = document.getElementById("telefono").value;
-    var d = document.getElementById("correo").value;
-    var e = document.getElementById("contrasena").value;
-    // Crear el nuevo objeto
-    arreglo = new datos(a,b,c,d,e);
-    contenedor();
-    // ordenarArreglo(registros);
-}
-
-// Función que contendrá el arreglo
-function contenedor() {
+    var objetoNombre = document.getElementById("nombre").value;
+    var objetoApellido = document.getElementById("apellido").value;
+    var objetoTelefono = document.getElementById("telefono").value;
+    var objetoCorreo = document.getElementById("correo").value;
+    var objetoContrasena = document.getElementById("contrasena").value;
+    arreglo = new objeto (objetoNombre, objetoApellido, objetoTelefono, objetoCorreo, objetoContrasena);
     registros.push(arreglo);
-    ordenarArreglo(registros);
-    // console.log(registros);
+    console.log(registros);
+
+
 }
 
-// Exportar las funciones
+function ordenarArreglo(arreglo){
+    registros.sort((a, b) => {
+        const apellidoA = a.apellido.toLowerCase();
+        const apellidoB = b.apellido.toLowerCase();
+        if (apellidoA < apellidoB) {
+            return -1;
+        }
+        if (apellidoA > apellidoB) {
+            return 1;
+        }
+        return 0;
+    });
+    console.log(registros);
+    return registros;
+}
+
+function filtrarCorreo(arreglo){
+    var correosFiltrados = registros.filter(function(x) {
+        return x.correo.includes("gmail.com")
+    });
+    console.log(correosFiltrados);
+    return correosFiltrados;
+}
+
 module.exports.registros = registros;
-module.exports.filtrarCorreo = filtrarCorreo;
-module.exports.ordenarArreglo = ordenarArreglo;
 module.exports.agregarRegistro = agregarRegistro;
+module.exports.ordenarArreglo = ordenarArreglo;
+module.exports.filtrarCorreo = filtrarCorreo;
