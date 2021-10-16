@@ -12,23 +12,23 @@
         <h3>Formulario de Registro</h3><br>
         <div>
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" class="txtCampos" onkeyup="checkNombre(document.getElementById('nombre'));">
+            <input type="text" id="nombre" class="txtCampos" onchange="checkNombre(event.target.value)">
         </div>
         <div>
             <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" class="txtCampos" onkeyup="checkApellido(document.getElementById('apellido'));">
+            <input type="text" id="apellido" class="txtCampos" onchange="checkApellido(event.target.value)">
         </div>
         <div>
             <label for="telefono">Teléfono</label>
-            <input type="text" id="telefono" class="txtCampos" onkeyup="checkTelefono(document.getElementById('telefono'));">
+            <input type="text" id="telefono" class="txtCampos" onchange="checkTelefono(event.target.value)">
         </div>
         <div>
             <label for="correo">Correo</label>
-            <input type="text" id="correo" class="txtCampos" onkeyup="checkCorreo(document.getElementById('correo'));">
+            <input type="text" id="correo" class="txtCampos" onchange="checkCorreo(event.target.value)">
         </div>
         <div>
             <label for="contrasena">Contraseña</label>
-            <input type="password" id="contrasena" class="txtCampos" onkeyup="checkContrasena(document.getElementById('contrasena'));">
+            <input type="password" id="contrasena" class="txtCampos" onchange="checkContrasena(event.target.value)">
         </div>
         <div>
             <input type="submit" id="btn-submit-form" value="Registrar">

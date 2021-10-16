@@ -1,68 +1,47 @@
+// "RegExp" validadores
+const text = new RegExp("^[a-zA-ZÀ-ÿ ]{4,30}$");
+const phone = new RegExp("^[0-9]{7}$");
+const mail = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z-]{2,4}$");
+const pass = new RegExp("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$");
+
 // Validar "NOMBRE"
-var txtNombre = /^[a-zA-ZÀ-ÿ\s]{4,30}$/;
-function checkNombre(nombre) {
-    var NAME = txtNombre.exec(nombre.value);
-    if (!NAME || NAME==null || NAME=="") {
-        // console.error(nombre.value + ' Falso');
-        return false;
-    } else {
-        // console.log('Verdadero '+ OK[0]);
+function checkNombre(valor) {
+    if (valor!="" && valor.match(text)) {
         return true;
     }
+    return false;
 }
-
 // Validar "APELLIDO"
-var txtApellido = /^[a-zA-ZÀ-ÿ\s]{4,30}$/;
-function checkApellido(apellido) {
-    var LASTNAME = txtApellido.exec(apellido.value);
-    if (!LASTNAME || LASTNAME==null || LASTNAME=="") {
-        // console.error(apellido.value + ' Falso');
-        return false;
-    } else {
-        // console.log('Verdadero '+ OK[0]);
+function checkApellido(valor) {
+    if (valor!="" && valor.match(text)) {
         return true;
     }
+    return false;
 }
-
 // Validar "TELÉFONO"
-var txtTelefono = /^\d{7}$/;
-function checkTelefono(telefono) {
-    var PHONE = txtTelefono.exec(telefono.value);
-    if (!PHONE || PHONE==null || PHONE=="") {
-        // console.error(telefono.value + ' Falso');
+function checkTelefono(valor) {
+    if (valor!="" && valor.match(phone)) {
         return true;
-    } else {
-        // console.log('Verdadero '+ OK[0]);
-        return false;
     }
+    return false;
 }
-
 // Validar "CORREO"
-// según la especificación HTML5
-// const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-var txtCorreo = /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-function checkCorreo(correo) {
-    var EMAIL = txtCorreo.exec(correo.value);
-    if (!EMAIL || EMAIL==null || EMAIL=="") {
-        // console.error(correo.value + ' Falso');
+function checkCorreo(valor) {
+    if (valor!="" && valor.match(mail)) {
         return true;
-    } else {
-        // console.log('Verdadero '+ OK[0]);
-        return false;
     }
+    return false;
 }
-
 // Validar "CONTRASEÑA"
-var txtPassword = /^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{8,})\S$/;
-function checkContrasena(contrasena) {
-    var PASS = txtPassword.exec(contrasena.value);
-    if (!PASS || PASS==null || PASS=="") {
-        // console.error(contrasena.value + ' Falso');
+function checkContrasena(valor) { 
+    if (valor!="" && valor.match(pass)) {
         return true;
-    } else {
-        // console.log('Verdadero '+ OK[0]);
-        return false;
     }
+    return false;
 }
-
-module.exports = { checkNombre, checkApellido, checkTelefono, checkCorreo, checkContrasena }
+// Variables globales
+module.exports.checkNombre = checkNombre;
+module.exports.checkApellido = checkApellido;
+module.exports.checkTelefono = checkTelefono;
+module.exports.checkCorreo = checkCorreo;
+module.exports.checkContrasena = checkContrasena;
