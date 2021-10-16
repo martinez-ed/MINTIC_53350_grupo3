@@ -1,42 +1,39 @@
-let registro = [];
+// "RegExp" validadores
+const mail = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z-]{2,4}$");
+const pass = new RegExp("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$");
+
+// Array con información consignada en formulario
+let registros = [];
 
 // Función que valida el ingreso
 function login() {
-
+    if (registros.length > 0) {
+        // Validar "CORREO"
+        // Validar "CONTRASEÑA"
+        return true;
+    }
+    return false;
 }
 
 // Función para capturar la información del formulario
 function agregarRegistro() {
-    // Constructor
-    class datos {
-        constructor(nombre, apellido, telefono, correo, contrasena) {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.telefono = telefono;
-            this.correo = correo;
-            this.contrasena = contrasena;
-        }
-    }
-    // Capturar valores
-    var a = document.getElementById("nombre").value;
-    var b = document.getElementById("apellido").value;
-    var c = document.getElementById("telefono").value;
-    var d = document.getElementById("correo").value;
-    var e = document.getElementById("contrasena").value;
-    // Crear el nuevo objeto
-    arreglo = new datos(a,b,c,d,e);
-    contenedor();
-}
-// Función que contendrá el arreglo
-function contenedor() {
-    registros.push(arreglo);
-    // ordenarArreglo(registros);
-    console.log(registros);
+    var dataForm = document.getElementById("form-login");
+    let data = {
+        correo: document.getElementById("correo").value,
+        pass: document.getElementById("contrasena").value,
+        captcha: document.getElementById("captcha").value,
+    };
+    registros.push(data);
+    dataForm.reset();
 }
 
 // Función que valida el captcha
 function validarCAPTCHA(valor) {
-
+    if (valor!="" && valor==1000) {
+        return true;
+    }
+    // alert("El valor ingresado NO es válido");
+    return false;
 }
 
 // Exportar las funciones
