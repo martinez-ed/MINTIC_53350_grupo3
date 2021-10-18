@@ -23,6 +23,7 @@ function login() {
     }
 }
 
+
 // Función para capturar la información del formulario
 function agregarRegistro() {
     var dataForm = document.getElementById("form-login");
