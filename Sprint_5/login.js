@@ -7,12 +7,20 @@ let registros = [];
 
 // Función que valida el ingreso
 function login() {
-    if (registros.length > 0) {
-        // Validar "CORREO"
-        // Validar "CONTRASEÑA"
-        return true;
-    }
+    var EMAIL = mail.exec(correo.value);
+    var PASS = pass.exec(contrasena.value);
+    if (!EMAIL || EMAIL==null || EMAIL=="" )  {
+    // console.error(correo.value + ' Falso');
     return false;
+    } else {
+        if (!PASS || PASS==null || PASS=="" ) {
+            return false;
+        }
+        else{
+    // console.log('Verdadero '+ OK[0]);
+    return true;
+        }
+    }
 }
 
 // Función para capturar la información del formulario
