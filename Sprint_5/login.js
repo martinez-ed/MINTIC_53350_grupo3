@@ -7,41 +7,57 @@ let registros = [];
 
 // Función que valida el ingreso
 function login() {
-    var EMAIL = mail.exec(correo.value);
-    var PASS = pass.exec(contrasena.value);
-    if (!EMAIL || EMAIL==null || EMAIL=="" )  {
-    // console.error(correo.value + ' Falso');
-    return false;
+    var a = document.getElementById("correo").value;
+    var b = document.getElementById("contrasena").value;
+    var c = document.getElementById("captcha").value;  
+    // Validar que no existan registros previos
+    if (registros.length > 0) {
+        // Validar campos del fromulario
+        if (checkCorreo(a)==true && checkContrasena(b)==true && validarCAPTCHA(c)==true) {
+            return agregarRegistro();
+        }
     } else {
-        if (!PASS || PASS==null || PASS=="" ) {
-            return false;
-        }
-        else{
-    // console.log('Verdadero '+ OK[0]);
-    return true;
-        }
+        console.log("No hay registros guardados");
+        registros.push({correo:"juan@gmail.com",contrasena:"SecurePassword123"})
+        return true;
     }
 }
 
-
-// Función para capturar la información del formulario
+// Capturando la información del formulario
 function agregarRegistro() {
     var dataForm = document.getElementById("form-login");
     let data = {
         correo: document.getElementById("correo").value,
-        pass: document.getElementById("contrasena").value,
-        captcha: document.getElementById("captcha").value,
+        contrasena: document.getElementById("contrasena").value,
     };
     registros.push(data);
+    console.log(registros);
     dataForm.reset();
 }
 
-// Función que valida el captcha
+// Validar "CORREO"
+function checkCorreo(valor) {
+    if (valor!="" && valor.match(mail)) {
+        return true;
+    }
+    console.log("Correo NO valido");
+    return false;
+}
+// Validar "CONTRASEÑA"
+function checkContrasena(valor) { 
+    if (valor!="" && valor.match(pass)) {
+        return true;
+    }
+    console.log("Contraseña NO valida");
+    return false;
+}
+
+// Validar "CAPTCHA"
 function validarCAPTCHA(valor) {
     if (valor!="" && valor==1000) {
         return true;
     }
-    // alert("El valor ingresado NO es válido");
+    console.log("Captcha NO valido");
     return false;
 }
 
