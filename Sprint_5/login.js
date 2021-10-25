@@ -12,13 +12,13 @@ function login() {
     var c = document.getElementById("captcha").value;  
     // Validar que no existan registros previos
     if (registros.length > 0) {
-        // Validar campos del fromulario
+        // Validar campos del formulario
         if (checkCorreo(a)==true && checkContrasena(b)==true && validarCAPTCHA(c)==true) {
             return agregarRegistro();
         }
     } else {
         console.log("No hay registros guardados");
-        registros.push({correo:"juan@gmail.com",contrasena:"SecurePassword123"})
+        registros.push({correo:"juan@gmail.com",contrasena:"SecurePassword123"});
         return true;
     }
 }
